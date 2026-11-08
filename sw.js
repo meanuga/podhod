@@ -1,5 +1,5 @@
 /* Подход: офлайн-кэш */
-const VERSION = 'podhod-1';
+const VERSION = 'podhod-4';
 const CORE = ['./', 'index.html', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'maskable-512.png', 'apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
