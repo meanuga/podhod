@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0e1216">
+<meta name="theme-color" content="#15191e">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Подход">
@@ -23,23 +23,23 @@
 <style>
   /* Раскладка: одна колонка до 560px, нижняя навигация на пять разделов, карточки только у упражнений в тренировке */
   :root {
-    --bg: #0e1216;
-    --surface: #161b21;
-    --surface2: #1e252d;
-    --line: #2a323c;
-    --fg: #e8ecf1;
+    --bg: #15191e;
+    --surface: #1c2127;
+    --surface2: #232a31;
+    --line: #2e363f;
+    --fg: #e6e9ec;
     --muted: #95a1b0;
-    --accent: #f5c02e;
-    --accent-ink: #171204;
-    --ok: #35b27a;
-    --bad: #ef5b5b;
+    --accent: #e3b765;
+    --accent-ink: #1d1608;
+    --ok: #6fb895;
+    --bad: #e07a7a;
     /* цвета групп мышц повторяют цвета блинов */
-    --g-chest: #ef5b5b;
-    --g-back: #4c8dff;
-    --g-legs: #f5c02e;
-    --g-shoulders: #35b27a;
+    --g-chest: #e07a7a;
+    --g-back: #6f9ae0;
+    --g-legs: #e3b765;
+    --g-shoulders: #6fb895;
     --g-arms: #b3bdcb;
-    --g-core: #f28c3a;
+    --g-core: #e3a06a;
     --f-display: 'Fira Sans Extra Condensed', 'Arial Narrow', Impact, sans-serif;
     --f-body: 'Fira Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
     color-scheme: dark;
@@ -69,16 +69,16 @@
   .pad { padding: 14px 0; }
 
   /* типографика */
-  .disp { font-family: var(--f-display); font-style: italic; font-weight: 700; text-transform: uppercase; letter-spacing: .02em; }
-  .h1 { font-size: 34px; line-height: 1.02; text-wrap: balance; margin: 4px 0 10px; }
-  .h2 { font-size: 22px; line-height: 1.1; margin: 26px 0 10px; }
-  .brand { font-size: 38px; line-height: 1; color: var(--accent); }
+  .disp { font-family: var(--f-body); font-weight: 600; letter-spacing: -.01em; }
+  .h1 { font-size: 28px; line-height: 1.12; text-wrap: balance; margin: 4px 0 10px; }
+  .h2 { font-size: 19px; line-height: 1.2; margin: 26px 0 10px; }
+  .brand { font-size: 32px; line-height: 1; color: var(--accent); }
   .top { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
   .bar2 { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
 
   /* кнопки */
   .btn {
-    min-height: 46px; padding: 0 18px; border-radius: 10px;
+    min-height: 46px; padding: 0 18px; border-radius: 14px;
     background: var(--surface2); border: 1px solid var(--line); font-weight: 600;
     display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   }
@@ -91,14 +91,14 @@
   .btn[disabled] { opacity: .45; cursor: default; }
   .btn.pri[disabled] { background: var(--surface2); color: var(--muted); opacity: 1; }
   .icon {
-    width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--line);
+    width: 40px; height: 40px; border-radius: 14px; border: 1px solid var(--line);
     background: var(--surface); display: inline-flex; align-items: center; justify-content: center; flex: none;
   }
   .stack { display: grid; gap: 10px; }
 
   /* поля */
   .in {
-    width: 100%; min-height: 46px; padding: 0 12px; border-radius: 10px;
+    width: 100%; min-height: 46px; padding: 0 12px; border-radius: 14px;
     background: var(--surface2); border: 1px solid var(--line); font-size: 16px;
   }
   textarea.in { padding: 12px; min-height: 220px; line-height: 1.5; resize: vertical; }
@@ -114,7 +114,7 @@
     background: transparent; font-size: 13px; font-weight: 500;
   }
   .chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 600; }
-  .seg { display: flex; gap: 2px; padding: 3px; margin-bottom: 14px; background: var(--surface); border-radius: 12px; }
+  .seg { display: flex; gap: 2px; padding: 3px; margin-bottom: 14px; background: var(--surface); border-radius: 16px; }
   .seg button { flex: 1; min-height: 38px; border: 0; border-radius: 9px; background: transparent; font-size: 12px; font-weight: 500; color: var(--muted); }
   .seg button[aria-pressed="true"] { background: var(--surface2); color: var(--fg); font-weight: 600; }
 
@@ -141,7 +141,7 @@
   .stats b { font-size: 34px; line-height: 1; }
   .stats span { font-size: 12px; color: var(--muted); }
   .tools { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
-  .tool { padding: 14px 8px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); font-size: 13px; font-weight: 500; text-align: center; min-height: 64px; }
+  .tool { padding: 14px 8px; border-radius: 16px; border: 1px solid var(--line); background: var(--surface); font-size: 13px; font-weight: 500; text-align: center; min-height: 64px; }
   .note-sm { font-size: 12px; color: var(--muted); margin-top: 26px; }
   .day-tip { padding: 14px 0; border-bottom: 1px solid var(--line); display: grid; gap: 6px; }
 
@@ -151,15 +151,15 @@
   .steps li::before {
     content: counter(s); position: absolute; left: 0; top: -1px; width: 28px; height: 28px; border-radius: 50%;
     background: var(--accent); color: var(--accent-ink); display: grid; place-items: center;
-    font-family: var(--f-display); font-style: italic; font-weight: 700; font-size: 16px;
+    font-family: var(--f-body); font-weight: 600; font-size: 15px;
   }
   .errs { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
   .errs li { position: relative; padding-left: 26px; }
   .errs li::before { content: '×'; position: absolute; left: 4px; top: -2px; color: var(--bad); font-size: 20px; font-weight: 600; }
-  .tipbox { margin: 16px 0; padding: 12px 14px; border-radius: 12px; background: var(--surface); border: 1px dashed var(--line); }
+  .tipbox { margin: 16px 0; padding: 12px 14px; border-radius: 16px; background: var(--surface); border: 1px dashed var(--line); }
 
   /* тренировка */
-  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px; margin-bottom: 12px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 14px; margin-bottom: 12px; }
   .exh { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
   .exname { flex: 1; text-align: left; border: 0; background: none; padding: 4px 0; font-weight: 600; font-size: 16px; }
   .sets { display: grid; gap: 8px; margin: 12px 0; }
@@ -182,12 +182,12 @@
   #dock { position: fixed; left: 0; right: 0; bottom: calc(64px + env(safe-area-inset-bottom, 0px)); padding: 0 max(12px, env(safe-area-inset-left, 0px)) 8px; display: grid; gap: 8px; z-index: 20; pointer-events: none; }
   body.nonav #dock { bottom: env(safe-area-inset-bottom, 0px); }
   #dock > * { pointer-events: auto; max-width: 560px; width: 100%; margin: 0 auto; }
-  .rest { position: relative; display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 12px; background: var(--surface2); border: 1px solid var(--accent); overflow: hidden; }
+  .rest { position: relative; display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 16px; background: var(--surface2); border: 1px solid var(--accent); overflow: hidden; }
   .rbar { position: absolute; left: 0; bottom: 0; height: 3px; width: 100%; background: var(--line); }
   .rbar i { display: block; height: 100%; width: 0; background: var(--accent); }
   .rtime { font-family: var(--f-display); font-size: 28px; font-weight: 700; font-variant-numeric: tabular-nums; min-width: 64px; }
   .rest .sp { flex: 1; }
-  .pill { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 14px; border-radius: 12px; background: var(--accent); color: var(--accent-ink); border: 0; font-weight: 600; text-align: left; }
+  .pill { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 14px; border-radius: 16px; background: var(--accent); color: var(--accent-ink); border: 0; font-weight: 600; text-align: left; }
   .dotlive { width: 9px; height: 9px; border-radius: 50%; background: var(--accent-ink); }
 
   /* навигация */
@@ -197,7 +197,7 @@
   #nav button { flex: 1; min-width: 0; display: grid; justify-items: center; gap: 2px; padding: 4px 0; border: 0; background: none; font-size: 11px; color: var(--muted); }
   #nav button[aria-current="page"] { color: var(--accent); font-weight: 600; }
 
-  #toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(140px + env(safe-area-inset-bottom, 0px)); max-width: min(90vw, 440px); background: var(--fg); color: var(--bg); padding: 10px 16px; border-radius: 10px; font-size: 14px; font-weight: 500; z-index: 40; opacity: 0; pointer-events: none; transition: opacity .2s; }
+  #toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(140px + env(safe-area-inset-bottom, 0px)); max-width: min(90vw, 440px); background: var(--fg); color: var(--bg); padding: 10px 16px; border-radius: 14px; font-size: 14px; font-weight: 500; z-index: 40; opacity: 0; pointer-events: none; transition: opacity .2s; }
   #toast.on { opacity: 1; }
 
   /* графики и калькуляторы */
@@ -216,10 +216,10 @@
 
   /* календарь */
   .calhead { display: flex; align-items: center; gap: 6px; margin: 4px 0 10px; }
-  .calhead b { flex: 1; text-align: center; font-family: var(--f-display); font-style: italic; text-transform: uppercase; font-size: 20px; letter-spacing: .02em; }
+  .calhead b { flex: 1; text-align: center; font-family: var(--f-body); font-weight: 600; font-size: 18px; letter-spacing: .02em; }
   .calgrid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; max-width: 440px; margin-inline: auto; }
   .caldow span { text-align: center; font-size: 11px; color: var(--muted); padding: 2px 0 6px; }
-  .cd { position: relative; aspect-ratio: 1; min-height: 40px; border: 1px solid transparent; border-radius: 10px; background: transparent; color: var(--fg); font-size: 14px; font-variant-numeric: tabular-nums; display: grid; place-items: center; }
+  .cd { position: relative; aspect-ratio: 1; min-height: 40px; border: 1px solid transparent; border-radius: 14px; background: transparent; color: var(--fg); font-size: 14px; font-variant-numeric: tabular-nums; display: grid; place-items: center; }
   .cd-x { visibility: hidden; }
   .cd.has { background: var(--surface2); border-color: var(--line); font-weight: 600; }
   .cd.has::after { content: ''; position: absolute; bottom: 4px; left: 50%; margin-left: -2px; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
@@ -244,7 +244,7 @@
   .prog { height: 4px; border-radius: 2px; background: var(--line); margin-bottom: 20px; overflow: hidden; }
   .prog i { display: block; height: 100%; background: var(--accent); }
   .opts { display: grid; gap: 10px; margin: 16px 0 20px; }
-  .opt { position: relative; display: grid; gap: 2px; text-align: left; padding: 14px 48px 14px 14px; min-height: 58px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); }
+  .opt { position: relative; display: grid; gap: 2px; text-align: left; padding: 14px 48px 14px 14px; min-height: 58px; border-radius: 16px; border: 1px solid var(--line); background: var(--surface); }
   .opt::after { content: ''; position: absolute; right: 16px; top: 50%; width: 18px; height: 18px; margin-top: -9px; border-radius: 50%; border: 2px solid var(--line); }
   .opt[aria-pressed="true"] { border-color: var(--accent); background: var(--surface2); }
   .opt[aria-pressed="true"]::after { background: var(--accent); border-color: var(--accent); }
@@ -252,27 +252,27 @@
 
   /* план тренировки: собираем список до старта таймера */
   .plan-note { margin: 0 0 18px; }
-  .pcard { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; margin-bottom: 10px; display: grid; gap: 10px; }
+  .pcard { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 12px 14px; margin-bottom: 10px; display: grid; gap: 10px; }
   .ptop { display: flex; align-items: center; gap: 6px; }
   .pname { flex: 1; min-width: 0; text-align: left; border: 0; background: none; padding: 2px 0; font-weight: 600; font-size: 16px; }
   .pmeta { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
   .pcount { font-family: var(--f-display); font-size: 22px; font-weight: 700; line-height: 1.1; color: var(--fg); font-variant-numeric: tabular-nums; }
-  .stepper { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .stepper { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
   .stepper button { width: 38px; height: 38px; border: 0; background: var(--surface2); font-size: 19px; font-weight: 600; line-height: 1; }
   .stepper span { min-width: 30px; text-align: center; font-weight: 600; font-variant-numeric: tabular-nums; }
   .pinline { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); }
   .pinline .in { width: 76px; min-height: 38px; text-align: center; }
-  .mini { width: 38px; height: 38px; flex: none; border-radius: 10px; border: 1px solid var(--line); background: transparent; display: inline-grid; place-items: center; color: var(--muted); font-size: 15px; }
+  .mini { width: 38px; height: 38px; flex: none; border-radius: 14px; border: 1px solid var(--line); background: transparent; display: inline-grid; place-items: center; color: var(--muted); font-size: 15px; }
   .mini:active { background: var(--surface2); }
 
   /* подсказка по весу */
-  .hint { display: flex; align-items: center; gap: 10px; margin: 10px 0 2px; padding: 10px 12px; border-radius: 10px; background: #1c1a12; border: 1px solid #3a3320; font-size: 13px; line-height: 1.35; }
+  .hint { display: flex; align-items: center; gap: 10px; margin: 10px 0 2px; padding: 10px 12px; border-radius: 14px; background: #262219; border: 1px solid #3a3320; font-size: 13px; line-height: 1.35; }
   .hint b { color: var(--accent); }
   .hint .btn { flex: none; }
   .hint .muted { display: block; margin-top: 2px; }
 
   /* конструктор своей программы */
-  .daycard { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px; margin-bottom: 12px; }
+  .daycard { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 12px; margin-bottom: 12px; }
   .dayhead { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
   .dayhead .in { font-weight: 600; flex: 1; min-width: 0; }
   .brow { display: flex; align-items: center; gap: 8px; padding: 10px 0 0; border-top: 1px solid var(--line); margin-top: 4px; }
@@ -295,6 +295,20 @@
   }
   .btn:active, .tool:active, .mini:active { transform: translateY(1px); }
 
+  .howbtn { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; }
+  /* обучение при первом входе */
+  #tour { position: fixed; inset: 0; z-index: 90; background: rgba(10, 12, 14, .74); }
+  #tour.has { background: transparent; }
+  .tspot { position: absolute; border-radius: 18px; box-shadow: 0 0 0 100vmax rgba(10, 12, 14, .74), 0 0 0 2px var(--accent); transition: left .25s, top .25s, width .25s, height .25s; pointer-events: none; }
+  .tcard { position: absolute; left: 16px; right: 16px; max-width: 360px; margin: 0 auto; padding: 18px 18px 14px; border-radius: 22px; background: var(--surface); border: 1px solid var(--line); box-shadow: 0 14px 44px rgba(0, 0, 0, .45); }
+  .tcard h3 { margin: 0 0 6px; font-size: 18px; font-weight: 600; }
+  .tcard p { margin: 0; color: var(--muted); }
+  .tfoot { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 14px; }
+  .tfoot .dots { flex: 1 0 100%; display: flex; gap: 5px; margin-bottom: 4px; }
+  .tfoot .dots i { width: 6px; height: 6px; border-radius: 50%; background: var(--line); }
+  .tfoot .dots i.on { background: var(--accent); }
+  .tfoot .btn { min-height: 40px; padding: 0 16px; }
+  .tskip { margin-right: auto; border: 0; background: none; color: var(--muted); padding: 8px 4px; font-size: 13px; }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } .btn:active, .tool:active, .mini:active { transform: none; } }
 </style>
 
@@ -864,6 +878,7 @@
     programs: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
     progress: '<path d="M3 20V4M3 20h18M7 15l4-4 3 3 6-7"/>',
     notes: '<path d="M5 3h11l3 3v15H5zM9 9h6M9 13h6M9 17h4"/>',
+    next: '<path d="M9 5l7 7-7 7"/>',
     back: '<path d="M15 5l-7 7 7 7"/>',
     check: '<path d="M5 12l5 5 9-10"/>',
     trash: '<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/>',
@@ -1452,6 +1467,19 @@
   /* ---------- экраны поверх вкладок ---------- */
   const V = {};
 
+  const hasHow = e => !!((e.s && e.s.length) || (e.e && e.e.length) || e.t);
+
+  V.how = v => {
+    const e = exById(v.id);
+    return '<div class="bar2"><button class="icon" data-a="back" aria-label="Назад">' + svg('back') + '</button><span class="muted sm">Как выполнять</span></div>' +
+      '<h1 class="h1 disp">' + esc(e.n) + '</h1>' +
+      (e.mu ? '<p class="muted">Работают: ' + esc(e.mu) + '.</p>' : '') +
+      (e.s.length ? '<h2 class="h2 disp">Шаги</h2><ol class="steps">' + e.s.map(s => '<li>' + esc(s) + '</li>').join('') + '</ol>' : '') +
+      (e.e.length ? '<h2 class="h2 disp">Частые ошибки</h2><ul class="errs">' + e.e.map(s => '<li>' + esc(s) + '</li>').join('') + '</ul>' : '') +
+      (e.t ? '<div class="tipbox"><b>Совет.</b> ' + esc(e.t) + '</div>' : '') +
+      '<div style="height:18px"></div><button class="btn pri lg full" data-a="addw" data-id="' + e.id + '">Добавить в ' + (S.active ? 'тренировку' : 'план') + '</button>';
+  };
+
   V.ex = v => {
     const e = exById(v.id), st = exStats(e.id), c = isCustom(e);
     const target = S.active ? 'тренировку' : 'план';
@@ -1461,10 +1489,8 @@
       '<div class="meta"><span class="tag">' + esc(e.eq || '—') + '</span><span class="tag">' + (c ? (e.hidden ? 'скрыто' : 'своё') : (e.lv === 1 ? 'подходит новичкам' : 'нужен опыт')) + '</span>' +
       '<span class="tag">' + (e.u ? 'на время' : (e.m === 'w' ? 'вес и повторы' : 'повторения')) + '</span></div>' +
       (e.mu ? '<p class="muted">Работают: ' + esc(e.mu) + '.</p>' : '') +
-      (e.s.length ? '<h2 class="h2 disp">Как выполнять</h2><ol class="steps">' + e.s.map(s => '<li>' + esc(s) + '</li>').join('') + '</ol>' : '') +
-      (e.e.length ? '<h2 class="h2 disp">Частые ошибки</h2><ul class="errs">' + e.e.map(s => '<li>' + esc(s) + '</li>').join('') + '</ul>' : '') +
-      (e.t ? '<div class="tipbox"><b>Совет.</b> ' + esc(e.t) + '</div>' : '') +
-      (c && !e.s.length && !e.t ? '<div class="tipbox"><b>Своё упражнение.</b> Технику можно дописать в редакторе — она будет видна здесь и в тренировке.</div>' : '') +
+      (hasHow(e) ? '<button class="btn lg full howbtn" data-a="how" data-id="' + e.id + '"><span>Как выполнять</span><span aria-hidden="true">' + svg('next') + '</span></button>' : '') +
+      (c && !hasHow(e) ? '<div class="tipbox"><b>Своё упражнение.</b> Технику можно дописать в редакторе — она будет видна на экране «Как выполнять».</div>' : '') +
       '<h2 class="h2 disp">Твои результаты</h2>' +
       (st.n ? '<div class="kv"><span class="muted">Лучший результат</span><b>' + esc(bestTxt(e, st)) + '</b></div>' +
         '<div class="kv"><span class="muted">Последний раз, ' + fmtDate(st.last.ts) + '</span><b>' + esc(st.last.sets.map(s => setTxt(e, s)).join(', ')) + '</b></div>'
@@ -1746,7 +1772,7 @@
       }).join('') + '<p class="note-sm">Это расчёт по формуле Эпли. Реальные возможности зависят от упражнения и самочувствия.</p>';
   }
 
-  const PLC = { 25: ['#ef5b5b', '100%'], 20: ['#4c8dff', '100%'], 15: ['#f5c02e', '84%'], 10: ['#35b27a', '68%'], 5: ['#e8ecf1', '54%'], 2.5: ['#3b4552', '42%'], 1.25: ['#93a0b0', '34%'] };
+  const PLC = { 25: ['#e07a7a', '100%'], 20: ['#6f9ae0', '100%'], 15: ['#e3b765', '84%'], 10: ['#6fb895', '68%'], 5: ['#e6e9ec', '54%'], 2.5: ['#3b4552', '42%'], 1.25: ['#93a0b0', '34%'] };
   V.plates = () => '<div class="bar2"><button class="icon" data-a="back" aria-label="Назад">' + svg('back') + '</button></div><h1 class="h1 disp">Блины на гриф</h1>' +
     '<p class="muted">Какие блины навесить на каждую сторону, чтобы получить нужный общий вес.</p><div style="height:12px"></div>' +
     '<div class="two"><label class="lbl">Общий вес, кг<input class="in" id="pt" data-in="pt" inputmode="decimal" value="' + esc(UI.plt.t) + '"></label>' +
@@ -1802,7 +1828,7 @@
       (bmi ? kv('Индекс массы тела', fmtN(Math.round(bmi * 10) / 10) + (cat ? ', ' + cat : '')) +
         '<p class="note-sm">Индекс массы тела не учитывает мышечную массу, поэтому у тех, кто тренируется, он условный.' + (p.age && p.age < 18 ? ' Для подростков оценка делается по другим таблицам.' : '') + '</p>' : '') +
       (p.age && p.age < 16 ? '<p class="note-sm">До 16 лет силовые тренировки лучше проводить под присмотром тренера или взрослого.</p>' : '') +
-      '<div style="height:18px"></div><div class="stack"><button class="btn" data-a="remind">Напоминания</button><button class="btn pri" data-a="obStart">Изменить анкету</button></div>';
+      '<div style="height:18px"></div><div class="stack"><button class="btn" data-a="remind">Напоминания</button><button class="btn" data-a="tour">Показать обучение</button><button class="btn pri" data-a="obStart">Изменить анкету</button></div>';
   };
 
   /* ---------- анкета первого запуска ---------- */
@@ -1871,6 +1897,7 @@
     UI.plt.bar = S.profile.sex === 'f' ? '15' : '20';
     UI.ob = null; UI.stack = []; UI.view = null; UI.tab = 'today';
     saveNow(); render(true); toast('Профиль сохранён');
+    if (!S.tourDone) setTimeout(startTour, 700);
   }
 
   /* ---------- отрисовка ---------- */
@@ -1998,6 +2025,11 @@
         render(); break;
       }
       case 'back': back(); break;
+      case 'tour': startTour(); break;
+      case 'tourNext': if (UI.tour) { if (UI.tour.i >= TOUR.length - 1) endTour(); else { UI.tour.i++; tourShow(); } } break;
+      case 'tourBack': if (UI.tour && UI.tour.i > 0) { UI.tour.i--; tourShow(); } break;
+      case 'tourSkip': endTour(); break;
+      case 'how': go({ t: 'how', id: d.id }); break;
       case 'ex': go({ t: 'ex', id: d.id }); break;
       case 'prog': go({ t: 'prog', id: d.id }); break;
       case 'g': UI.g = d.v; render(); break;
@@ -2271,6 +2303,62 @@
     }
   }
 
+  /* ---------- обучение ---------- */
+  const TOUR = [
+    { h: 'Добро пожаловать в «Подход»', p: 'Короткий тур покажет, где что находится. Это займёт меньше минуты.' },
+    { tab: 'today', sel: '#nav [data-v="today"]', h: 'Сегодня', p: 'Главный экран. Нажми «Собрать тренировку», выбери упражнения и записывай подходы: вес, повторы и отдых между ними.' },
+    { tab: 'exercises', sel: '#nav [data-v="exercises"]', h: 'Упражнения', p: 'Каталог с фильтрами. Открой упражнение и нажми «Как выполнять»: там шаги, частые ошибки и совет.' },
+    { tab: 'programs', sel: '#nav [data-v="programs"]', h: 'Программы', p: 'Готовые планы на несколько дней. Возьми любой за основу и измени под себя или создай свой.' },
+    { tab: 'progress', sel: '#nav [data-v="progress"]', h: 'Прогресс', p: 'История тренировок, рекорды и вес тела. Здесь видно, как растут твои результаты.' },
+    { tab: 'notes', sel: '#nav [data-v="notes"]', h: 'Блокнот', p: 'Записывай самочувствие, замечания по технике и планы на следующую тренировку.' },
+    { tab: 'today', sel: '[data-a="profile"]', h: 'Профиль', p: 'Здесь анкета, напоминания о тренировках и кнопка «Показать обучение», если захочешь пройти тур ещё раз.' }
+  ];
+  function tourLayout() {
+    const el = document.getElementById('tour');
+    if (!el || !UI.tour) return;
+    const s = TOUR[UI.tour.i], t = s.sel ? document.querySelector(s.sel) : null, spot = el.querySelector('.tspot'), card = el.querySelector('.tcard');
+    const vh = window.innerHeight;
+    el.classList.toggle('has', !!t);
+    card.style.top = card.style.bottom = '';
+    if (t) {
+      const r = t.getBoundingClientRect(), pad = 6;
+      spot.hidden = false;
+      spot.style.left = (r.left - pad) + 'px'; spot.style.top = (r.top - pad) + 'px';
+      spot.style.width = (r.width + pad * 2) + 'px'; spot.style.height = (r.height + pad * 2) + 'px';
+      if (r.top > vh / 2) card.style.bottom = (vh - r.top + 16) + 'px'; else card.style.top = (r.bottom + 16) + 'px';
+    } else {
+      spot.hidden = true;
+      card.style.top = Math.max(24, (vh - card.offsetHeight) / 2) + 'px';
+    }
+  }
+  function tourShow() {
+    const s = TOUR[UI.tour.i];
+    if (s.tab) { UI.view = null; UI.stack = []; UI.ob = null; UI.tab = s.tab; render(true); }
+    let el = document.getElementById('tour');
+    if (!el) { el = document.createElement('div'); el.id = 'tour'; el.setAttribute('role', 'dialog'); el.setAttribute('aria-modal', 'true'); document.body.appendChild(el); }
+    const last = UI.tour.i === TOUR.length - 1;
+    el.innerHTML = '<div class="tspot" hidden></div><div class="tcard"><h3>' + esc(s.h) + '</h3><p>' + esc(s.p) + '</p><div class="tfoot"><div class="dots">' +
+      TOUR.map((x, i) => '<i' + (i === UI.tour.i ? ' class="on"' : '') + '></i>').join('') + '</div>' +
+      (last ? '' : '<button class="tskip" data-a="tourSkip">Пропустить</button>') +
+      (UI.tour.i > 0 ? '<button class="btn" data-a="tourBack">Назад</button>' : '') +
+      '<button class="btn pri" data-a="tourNext">' + (last ? 'Готово' : UI.tour.i === 0 ? 'Начать' : 'Дальше') + '</button></div></div>';
+    tourLayout();
+    const nb = el.querySelector('[data-a="tourNext"]'); if (nb) nb.focus({ preventScroll: true });
+  }
+  function startTour() {
+    if (UI.ob || UI.tour) return;
+    UI.tour = { i: 0 };
+    tourShow();
+  }
+  function endTour() {
+    UI.tour = null;
+    const el = document.getElementById('tour'); if (el) el.remove();
+    if (!S.tourDone) { S.tourDone = true; saveNow(); }
+    UI.view = null; UI.stack = []; UI.tab = 'today'; render(true);
+  }
+  window.addEventListener('resize', tourLayout);
+  document.addEventListener('keydown', e => { if (UI.tour && e.key === 'Escape') endTour(); });
+
   document.addEventListener('click', e => {
     const el = e.target.closest('[data-a]');
     if (!el) return;
@@ -2358,6 +2446,7 @@
   if (!S.profile) UI.ob = newOb(null);
   else { UI.fit = S.profile.place === 'home'; if (S.profile.sex === 'f') UI.plt.bar = '15'; }
   render(true);
+  if (S.profile && !S.tourDone) setTimeout(startTour, 600);
 })();
 </script>
 <script>
