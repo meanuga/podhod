@@ -1,6 +1,6 @@
 /* Подход: офлайн-кэш */
-const VERSION = 'podhod-6';
-const CORE = ['./', 'index.html', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'maskable-512.png', 'apple-touch-icon.png'];
+const VERSION = 'podhod-7';
+const CORE = ['./', 'index.html', 'css/style.css', 'js/data.js', 'js/app.js', 'js/sw-register.js', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'maskable-512.png', 'apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(VERSION).then(c => c.addAll(CORE)).then(() => self.skipWaiting()));
